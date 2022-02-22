@@ -1,70 +1,92 @@
 <link type="text/css" rel="stylesheet" href="css/simple.css"/>
 
-<h2>PORTFOLIO</h2>
+<h2>PORTFOLIO - XAVIER WEVERS</h2>
+
+<h5>My name is Xavier Wevers and I specialize myself in the making of games, 
+  this is done through Unity and C#. I am currently studying Software-Development 
+  at SintLucas Eindhoven in the Netherlands. Web Development is not my strongest 
+  point, I haven't really found any interest for it, so my progress for web isn't that 
+  magnificent.</h5>
+  
+  <h5>Here I show off all of my work and projects I have worked on so far in my career 
+  as a programmer.</h5>
+
 <div id="myBtnContainer">
   <button class="btn active" onclick="filterSelection('all')"> Show all</button>
   <button class="btn" onclick="filterSelection('newest projects')"> Newest Projects</button>
-  <button class="btn" onclick="filterSelection('old projects')"> Old Projects</button>
+  <button class="btn" onclick="filterSelection('old projects')"> Old Projects </button>
 </div>
 
 <div class="row">
     <div class="column newest projects">
         <div class="content">
-          <img src="images/Monster Overview.png" alt="Monster Quiz" style="width:100%">
+          <img src="images/Monster Overview.png" alt="Monster Quiz" style="width: 100%">
           <h4>Monster Quiz</h4>
           <p>The Monster Quiz is my second project wherein I worked with a team. Our goal was to show how different everyone is by showing the data's through the visuals of monsters.</p>
     
             <p>- Quiz Developed by Xavier & Jody</p>
             <p>- Art by Amy, Michiel & Mitchell</p>
             
-            <p>Made In 2022, (Year 2 - Period 6)</p>
+            <p>Made In 2022</p>
         </div>
       </div>
 
-  <div class="column newest projects">
-    <div class="content">
-      <img src="images/DiscoJam.png" alt="Disco Jam" style="width:100%">
-      <h4>Disco Jam</h4>
-      <p>Disco Jam is my very first project made by a whole team, the teamwork on it was amazing and our end result looks fantastic for our first project together.</p>
+      <div class="column newest projects">
+        <div class="content">
+          <img src="images/2D Platformer.png" alt="2D Platformer" style="width:100%">
+          <h4>2D Platformer</h4>
+          <p>This platformer was made for the arcade cabin, it uses sprites from the unity asset store and works like a pve platformer. You fight through enemies, 
+            find chests and get to the end-goal.</p>
 
-        <p>- Game Developed by Xavier & Luuk</p>
-        <p>- Art by Celesta & Rik</p>
-        
-        <p>Made In 2021</p>
-    </div>
-  </div>
+            <p>Made In 2021</p>
 
-  <div class="column newest projects">
-    <div class="content">
-      <img src="images/XaviePlayz Logo.png" alt="Lights" style="width:10%">
-      <h4>Lights</h4>
-      <p>Lorem ipsum dolor..</p>
-    </div>
-  </div>
-  
-  <div class="column old projects">
-    <div class="content">
-      <img src="images/XaviePlayz Logo.png" alt="Car" style="width:10%">
-      <h4>Retro</h4>
-      <p>Lorem ipsum dolor..</p>
-    </div>
-  </div>
+        </div>
+      </div>
 
-  <div class="column old projects">
-    <div class="content">
-      <img src="images/XaviePlayz Logo.png" alt="Car" style="width:10%">
-      <h4>Fast</h4>
-      <p>Lorem ipsum dolor..</p>
-    </div>
-  </div>
+      <div class="column newest projects">
+        <div class="content">
+          <img src="images/DiscoJam.png" alt="Disco Jam" style="width: 100%">
+          <h4>Disco Jam</h4>
+          <p>Disco Jam is my very first project made by a whole team, the teamwork on it was amazing and our end result looks fantastic for our first project together.</p>
+    
+            <p>- Game Developed by Xavier & Luuk</p>
+            <p>- Art by Celesta & Rik</p>
+            <p>Made In 2021</p>
+        </div>
+      </div>
 
-  <div class="column old projects">
-    <div class="content">
-      <img src="images/XaviePlayz Logo.png" alt="Car" style="width:10%">
-      <h4>Classic</h4>
-      <p>Lorem ipsum dolor..</p>
+      <div class="column old projects">
+        <div class="content">
+          <img src="images/DiscoJam.png" alt="???" style="width:100%">
+          <h4>???</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+
+      <div class="column old projects">
+        <div class="content">
+          <img src="images/DiscoJam.png" alt="???" style="width:100%">
+          <h4>???</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+    
+      <div class="column old projects">
+        <div class="content">
+          <img src="images/DiscoJam.png" alt="???" style="width:100%">
+          <h4>???</h4>
+          <p>Lorem ipsum dolor..</p>
+        </div>
+      </div>
+
+      <div class="footeritem">
+        <h1>Read my Resume:</h1>
+        <ul>
+            <li>Dutch <a style="color: inherit; text-decoration-thickness: 1px;" href="https://tygoboons.nl/Resumes/cv_nederlands.pdf">Resume</a></li>
+            <li>English <a style="color: inherit; text-decoration-thickness: 1px;" href="https://tygoboons.nl/Resumes/cv_english.pdf">Resume</a></li>
+        </ul>
     </div>
-  </div>
+</div>
 
 <script type="text/javascript">
     filterSelection("all") // Execute the function and show all columns
@@ -113,5 +135,42 @@ for (var i = 0; i < btns.length; i++) {
     current[0].className = current[0].className.replace(" active", "");
     this.className += " active";
   });
+}
+
+//Clickable Images
+const containers = document.getElementsByClassName("container");
+
+[].forEach.call(containers, function (item) {
+    item.addEventListener('mouseover', hoverVideo, false);
+    item.addEventListener('mouseout', hideVideo, false);
+});
+
+function hoverVideo(e) {
+    this.getElementsByClassName("preview")[0].play();
+}
+function hideVideo(e) {
+    this.getElementsByClassName("preview")[0].pause();
+}
+
+for (var i = 0; i < containers.length; i++) {
+    var a = containers[i];
+    var buttonCount = a.getElementsByClassName('button').length;
+
+    switch (buttonCount) {
+        case 1:
+            a.getElementsByClassName('button')[0].style.marginLeft = '25%';
+            break;
+
+        case 2:
+            a.getElementsByClassName('button')[0].style.marginLeft = '10%';
+            a.getElementsByClassName('button')[1].style.marginLeft = '40%';
+            break;
+
+        case 3:
+            a.getElementsByClassName('button')[2].style.marginLeft = '0%';
+            a.getElementsByClassName('button')[1].style.marginLeft = '50%';
+            a.getElementsByClassName('button')[0].style.marginLeft = '25%';
+            break;
+    }
 }
 </script>
