@@ -10,14 +10,14 @@
 <div class="row">
   <div class="column newest projects">
     <div class="content">
-      <img src="images/DiscoJam.png" alt="Disco Jam" style="width:10%">
+      <img src="images/DiscoJam.png" alt="Disco Jam" style="width:100%">
       <h4>Disco Jam</h4>
-      <p>Disco Jam is my very first project made by a whole team, the teamwork on it was amazing and our end result looks fantastic for our first project together.
+      <p>Disco Jam is my very first project made by a whole team, the teamwork on it was amazing and our end result looks fantastic for our first project together.</p>
 
-        - Game Developed by Xavier & Luuk
-        - Art by Celesta & Rik
+        <p>- Game Developed by Xavier & Luuk</p>
+        <p>- Art by Celesta & Rik</p>
         
-        Made In 2021, (Year 2 - Period 5)</p>
+        <p>Made In 2021</p>
     </div>
   </div>
   <div class="column newest projects">
@@ -65,13 +65,13 @@ function filterSelection(c) {
   if (c == "all") c = "";
   // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
   for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    IconShow(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
   }
 }
 
 // Show filtered elements
-function w3AddClass(element, name) {
+function AddClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
@@ -83,7 +83,7 @@ function w3AddClass(element, name) {
 }
 
 // Hide elements that are not selected
-function w3RemoveClass(element, name) {
+function IconShow(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
