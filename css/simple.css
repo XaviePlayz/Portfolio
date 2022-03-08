@@ -7,8 +7,15 @@
     background-color: #3f3f3f;
     padding: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    z-index: 0;
   }
   
+  @keyframes moveIt {
+    from {background-position: 0px 200px;}
+    to {background-position : 200px  0px;}
+  }
+
   .main {
     max-width: 1000px;
     margin: auto;
@@ -48,7 +55,7 @@
     clear: both;
   }
   
-  .content {
+  .container {
     background-color: rgb(180, 180, 180);
     padding: 10px;
     margin: 10px;
@@ -86,5 +93,97 @@
 
   .footer h1{
     font-size: 30px;
-
   }
+
+/*3 per row*/
+.content{
+  border: 0.5px solid rgba(54, 69, 90, 1); 
+  display: inline-block;
+  position:relative;
+  margin: -3px;
+}
+
+.year
+{
+  opacity: 0;
+  top: 50%;
+  font-size: 2vmin;
+}
+
+/*2 per row*/
+@media (max-aspect-ratio: 6/7){
+  .container {
+    width: 49vw;
+    height: 27.9vw;
+  }
+
+  .title{
+    font-size: 2vw;
+  }
+
+  .year{
+    font-size: 1.6vw;
+  }
+}
+
+/*1 per row*/
+@media (max-aspect-ratio: 6/9){
+  .info{
+    font-size: smaller;
+  }
+  .button a{
+    font-size: 3vw;
+    }
+
+  .container{
+    width: 100vw;
+    height: 56.25vw;
+    margin-top: -7px;
+  }
+    
+  .year, .title{
+    font-size: 4.5vw;
+  }
+
+  #footer{
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  #wrapper{
+    font-size: 1.5vw;
+    padding-left: 10%;
+    padding-right: 15%;
+  }
+}
+
+@media (max-width: 1100px)
+{
+  #intro
+  {
+    font-size: 1.7vmin;
+  }
+
+  #title
+  {
+    font-size: 2.5vmin;
+  }
+}
+
+/*2 per row*/
+@media (max-width: 800px)
+{
+.container {
+  width: 49vw;
+  height: 27.9vw;
+}
+
+.button a{
+  font-size: 1vw;
+  }
+
+.year, .title
+{
+  font-size: 2vw;
+}
+}
