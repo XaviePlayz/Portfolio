@@ -1,189 +1,298 @@
-* {
-    box-sizing: border-box;
-    background-color: #3f3f3f;
-  }
-  
-  body {
-    background-color: #3f3f3f;
-    padding: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+*{
+  margin: 0;
+  padding: 0;
+}
+
+html
+{
+  font-family: 'Trebuchet MS';
+  background-color: #353535;
+  margin: 0;
+}
+
+body
+{
     margin: 0;
     z-index: 0;
-  }
-  
-  @keyframes moveIt {
-    from {background-position: 0px 200px;}
-    to {background-position : 200px  0px;}
-  }
+}
+.row{
 
-  .main {
-    max-width: 1000px;
-    margin: auto;
-  }
-  
-  h1 {
-    font-size: 50px;
-  }
+  width: auto;
+  display: inline;
 
-  p, h4{
-    background-color: rgb(180, 180, 180);
-  }
+}
 
-  h5{
-    font-size: 25px;
-    text-align: center;
-  }
-  
-  .row {
-    margin: 8px -16px;
-  }
-  
-  .row,
-  .row > .column {
-    padding: 8px;
-  }
-  
-  .column {
-    float: left;
-    width: 33.33%;
-    display: none; 
-  }
-  
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  .container {
-    background-color: rgb(180, 180, 180);
-    padding: 10px;
-    margin: 10px;
-    height: 600px;
-  }
-  
-  .show {
-    display: block;
-  }
-  
-  .btn {
-    border: none;
-    outline: none;
-    padding: 12px 16px;
-    background-color: white;
-    cursor: pointer;
-  }
-  
-  .btn:hover {
-    background-color: #ddd;
-  }
-  
-  .btn.active {
-    background-color: #666;
-     color: white;
-  }
+.show {
 
-  #footer{
-    display: flex;
-    margin: auto;
-    width: 50%;
-    padding: 10px;
-    justify-content: center;
-  }
+  display: inherit;
+}
 
-  #footer h1{
-    font-size: 30px;
-  }
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+h5{
+  margin-left: 10vh;
+  margin-right: 10vh;
+}
+
+#title
+{
+  font-size: 3vh;
+  color: white;
+  padding-bottom: 2vh;
+  padding-top: 5vh;
+  text-align: center;
+}
+
+#intro, #footer
+{
+  text-align: justify;
+  height: max-content;
+  font-size: 2vh;
+  margin-bottom: 5px;
+  color: white;   
+}
+
+.title, .year {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 25%;
+  transition: top .5s ease;
+  font-weight: 700;
+  font-size: 3vmin;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  z-index: 1;
+
+  -webkit-text-stroke-width: 0.3px;
+  -webkit-text-stroke-color: rgb(255, 255, 255)
+}
+
+.info
+{
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  height: max-content;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 18px;
+  top: 40%;
+  position:absolute;
+  color: white;
+  transition: opacity .35s ease;
+  opacity: 0;
+}
 
 /*3 per row*/
-.content{
-  border: 0.5px solid rgba(54, 69, 90, 1); 
-  display: inline-block;
-  position:relative;
-  margin: -3px;
+.container
+    {
+      background-color: black;
+      border: 0.5px solid rgba(54, 69, 90, 1); 
+      display: inline-block;
+      position:relative;
+      width: 32.9vw;
+      height: 18.5vw;
+      margin: -3px;
+    }
+
+    .year
+    {
+      opacity: 0;
+      top: 50%;
+      font-size: 2vmin;
+    }
+
+    .button{
+      position: absolute;
+      width: 50%;
+      top: 30%;
+      text-align: center;
+      opacity: 0;
+      transition: opacity .35s ease;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+  .button a{
+    padding: 6px 30px;
+    text-align: center;
+    color: white;
+    border: solid 2px white;
+    z-index: 1;
+    pointer-events: all;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    font-size: 0.7vw;
+  } 
+
+/*2 per row*/
+@media (max-aspect-ratio: 6/7)
+{
+.container {
+  width: 49vw;
+  height: 27.9vw;
+}
+
+.button a{
+  font-size: 1vw;
+  }
+
+.year, .title, .info
+{
+  font-size: 2vw;
 }
 
 .year
 {
-  opacity: 0;
-  top: 50%;
-  font-size: 2vmin;
+  font-size: 1.6vw;
 }
 
-/*2 per row*/
-@media (max-aspect-ratio: 6/7){
-  .container {
-    width: 49vw;
-    height: 27.9vw;
-  }
+#footer
+{
+  margin-left: 20%;
+  margin-right: 10%;
+}
 
-  .title{
-    font-size: 2vw;
-  }
+#wrapper
+{
+  padding-left: 10%;
+  padding-right: 10%;
+}
 
-  .year{
-    font-size: 1.6vw;
-  }
 }
 
 /*1 per row*/
-@media (max-aspect-ratio: 6/9){
-  .info{
-    font-size: smaller;
-  }
+@media (max-aspect-ratio: 6/9)
+{
+
   .button a{
     font-size: 3vw;
     }
 
-  .container{
+  .container {
     width: 100vw;
     height: 56.25vw;
     margin-top: -7px;
   }
     
-  .year, .title{
+  .year, .title, .info
+  {
     font-size: 4.5vw;
   }
 
-  #footer{
+  #footer
+  {
     margin-left: 10%;
     margin-right: 10%;
   }
+
+  #wrapper
+  {
+    font-size: 1.5vw;
+    padding-left: 10%;
+    padding-right: 15%;
+  }
 }
 
-@media (max-width: 1100px){
+@media (max-width: 1100px)
+{
   #intro
   {
     font-size: 1.7vmin;
   }
-
-  #title
-  {
-    font-size: 2.5vmin;
-  }
-  #footer
-  {
-    font-size: 1.7vmin;
-  }
-  #footer h1{
-    font-size: 2.5vmin;
-  }
-
-  #myBtnContainer{
-    font-size: 1.7vmin;
-    margin: -3px;
-  }
 }
 
 /*2 per row*/
-@media (max-width: 800px){
-  .container {
+@media (max-width: 800px)
+{
+  .container
+  {
     width: 49vw;
     height: 27.9vw;
   }
 
-  .year, .title
+  .button a
+  {
+    font-size: 1vw;
+  }
+
+  .year, .title, .info
   {
     font-size: 2vw;
   }
 }
+
+.container:hover .icon img, .container:hover .button, .container:hover .info
+  {
+    opacity: 1;
+  }
+
+  .preview, .onhoverpreview {
+    position: absolute;
+    width:  100%;
+    height: 100%;
+  }
+
+  .onhoverpreview
+  {
+    opacity: 1;
+    transition: opacity .35s ease;
+  }
+
+  .container:hover .onhoverpreview
+  {
+    opacity: 0;
+  }
+  
+  .container:hover .title {
+    top: 5%;
+  }
+
+  .container:hover .year
+  {
+    top: 75%;
+    opacity: 1;
+  }
+
+  #footer
+  {
+    margin-left: 20%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .footeritem
+  {
+    margin-left: 5%;
+    display: inline-block;
+    width: 40%;
+  }
+
+  ul li
+  {
+    font-size: 2vh;
+    list-style: square;
+  }
+
+  h1
+  {
+    font-size: 3vh;
+    list-style: square;
+  }
