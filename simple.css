@@ -34,8 +34,10 @@ body {
 }
 
 h5 {
-  margin-left: 10vh;
-  margin-right: 10vh;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding: 10px;
+  font-size: 2.1vh;
 }
 
 #title {
@@ -46,7 +48,7 @@ h5 {
   text-align: center;
 }
 
-#intro, #footer {
+#intro{
   text-align: justify;
   height: max-content;
   font-size: 2vh;
@@ -89,27 +91,23 @@ h5 {
 .extraInfo {
   margin-left: 10%;
   margin-right: 10%;
-  width: 80%;
-  height: max-content;
   padding: 10px;
   font-size: 2.1vh;
-  top: 40%;
-  color: rgb(0, 0, 0);
-  transition: opacity 1s ease-in;
-  opacity: .9;
+  color: rgb(255, 255, 255);
 }
 
 .extraInfoTitle {
   margin-left: 10%;
   margin-right: 10%;
-  width: 80%;
-  height: max-content;
+  font-size: 4vh;
+  color: rgb(255, 255, 255);
+}
+.extraInfoPageTitle {
+  margin-left: 10%;
+  margin-right: 10%;
   padding: 10px;
   font-size: 5vh;
-  top: 40%;
-  color: rgb(0, 0, 0);
-  transition: opacity 1s ease-in;
-  opacity: .9;
+  color: rgb(255, 255, 255);
 }
 
 /*3 per row*/
