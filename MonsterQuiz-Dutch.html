@@ -103,7 +103,7 @@
                         Mijn Book</a>
                 </li>
                 <label for="language">Taal</label>
-                <select id="language" name="language">
+                <select id="language" name="language" onchange="javascript:handleSelect(this);">
                     <option value="MonsterQuiz-Dutch">Nederlands</option>
                     <option value="MonsterQuiz">Engels</option>
                 </select>
@@ -125,10 +125,14 @@
                     iedereen is door de gegevens te laten zien door middel van de visuals van monsters.</p>
                 <h5 class="extraInfoTitle">HOE HET WERKT<br></h5>
                 <p class="extraInfo">Dit spel is een soort quiz, je krijgt vragen die je beantwoordt en
-                    met die antwoorden krijg je een ander soort monster. Het spel verzamelt je gegevens en daarmee voor elk
-                    specifiek antwoord dat je kunt invullen zal er een andere visuele output zijn. Dus bijvoorbeeld: er is een vraag waarbij je
-                    je oogkleur kiest, dit zal uiteindelijk de ogen van het monster veranderen, waardoor elke optie een andere output krijgt.
-                    Er is een totaal van 12 vragen, dat maakt het mogelijk om meer dan 25.000.000 verschillende monsters te krijgen.</p>
+                    met die antwoorden krijg je een ander soort monster. Het spel verzamelt je gegevens en daarmee voor
+                    elk
+                    specifiek antwoord dat je kunt invullen zal er een andere visuele output zijn. Dus bijvoorbeeld: er
+                    is een vraag waarbij je
+                    je oogkleur kiest, dit zal uiteindelijk de ogen van het monster veranderen, waardoor elke optie een
+                    andere output krijgt.
+                    Er is een totaal van 12 vragen, dat maakt het mogelijk om meer dan 25.000.000 verschillende monsters
+                    te krijgen.</p>
                 <img style="width: 100%;" src="images/Monster Overview.png" alt="">
 
                 <!-- jQuery CDN - Slim version (=without AJAX) -->
@@ -154,4 +158,11 @@
     function handleSelect(elm) {
         window.location = elm.value + ".html";
     }
+
+    //Sidebar
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
 </script>
