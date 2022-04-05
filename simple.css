@@ -1,29 +1,20 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
 
-html
-{
+html {
   font-family: 'Trebuchet MS';
   background-color: #353535;
   margin: 0;
 }
 
-body
-{
-    margin: 0;
-    z-index: 0;
-}
-.row{
-
-  width: auto;
-  display: inline;
-
+body {
+  margin: 0;
+  z-index: 0;
 }
 
 .show {
-
   display: inherit;
 }
 
@@ -31,7 +22,6 @@ body
   border: none;
   outline: none;
   padding: 12px 16px;
-  background-color: white;
   cursor: pointer;
 }
 
@@ -44,13 +34,12 @@ body
   color: white;
 }
 
-h5{
+h5 {
   margin-left: 10vh;
   margin-right: 10vh;
 }
 
-#title
-{
+#title {
   font-size: 3vh;
   color: white;
   padding-bottom: 2vh;
@@ -58,13 +47,12 @@ h5{
   text-align: center;
 }
 
-#intro, #footer
-{
+#intro, #footer {
   text-align: justify;
   height: max-content;
   font-size: 2vh;
   margin-bottom: 5px;
-  color: white;   
+  color: white;
 }
 
 .title, .year {
@@ -84,257 +72,210 @@ h5{
   -webkit-text-stroke-color: rgb(255, 255, 255)
 }
 
-.info
-{
+.info {
   margin-left: 10%;
   margin-right: 10%;
   width: 80%;
   height: max-content;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.4);
-  font-size: 18px;
+  font-size: 2vh;
   top: 40%;
-  position:absolute;
+  position: absolute;
   color: white;
   transition: opacity .35s ease;
   opacity: 0;
 }
 
+.extraInfo {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  height: max-content;
+  padding: 10px;
+  font-size: 2.1vh;
+  top: 40%;
+  color: rgb(0, 0, 0);
+  transition: opacity 1s ease-in;
+  opacity: .9;
+}
+
+.extraInfoTitle {
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  height: max-content;
+  padding: 10px;
+  font-size: 5vh;
+  top: 40%;
+  color: rgb(0, 0, 0);
+  transition: opacity 1s ease-in;
+  opacity: .9;
+}
+
 /*3 per row*/
-.container
-    {
-      background-color: black;
-      border: 0.5px solid rgba(54, 69, 90, 1); 
-      display: inline-block;
-      position:relative;
-      width: 32.9vw;
-      height: 18.5vw;
-      margin: -3px;
-    }
+.container {
+  position: relative;
+  width: 32.9vw;
+  height: 18.5vw;
+}
 
-    .year
-    {
-      opacity: 0;
-      top: 50%;
-      font-size: 2vmin;
-    }
+.year {
+  opacity: 0;
+  top: 50%;
+  font-size: 2vmin;
+}
 
-    .button{
-      position: absolute;
-      width: 50%;
-      top: 30%;
-      text-align: center;
-      opacity: 0;
-      transition: opacity .35s ease;
-      z-index: 0;
-      pointer-events: none;
-    }
+.button {
+  position: absolute;
+  width: 50%;
+  top: 30%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity .35s ease;
+  z-index: 0;
+  pointer-events: none;
+}
 
-  .button a{
-    padding: 6px 30px;
-    text-align: center;
-    color: white;
-    border: solid 2px white;
-    z-index: 1;
-    pointer-events: all;
-    text-decoration: none;
-    background-color: rgba(0, 0, 0, 0.3);
-    font-size: 0.7vw;
-  } 
+.button a {
+  padding: 6px 30px;
+  text-align: center;
+  color: white;
+  border: solid 2px white;
+  z-index: 1;
+  pointer-events: all;
+  text-decoration: none;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 0.7vw;
+}
 
 /*2 per row*/
-@media (max-aspect-ratio: 6/7)
-{
-.container {
-  width: 49vw;
-  height: 27.9vw;
-}
-
-.button a{
-  font-size: 1vw;
+@media (max-aspect-ratio: 6/7) {
+  .container {
+    width: 49vw;
+    height: 27.9vw;
   }
 
-.year, .title, .info
-{
-  font-size: 2vw;
-}
+  .button a {
+    font-size: 1vw;
+  }
 
-.year
-{
-  font-size: 1.6vw;
-}
+  .year, .title, .info {
+    font-size: 2vw;
+  }
 
-#footer
-{
-  margin-left: 20%;
-  margin-right: 10%;
-}
+  .year {
+    font-size: 1.6vw;
+  }
 
-#wrapper
-{
-  padding-left: 10%;
-  padding-right: 10%;
-}
+  #footer {
+    margin-left: 20%;
+    margin-right: 10%;
+  }
+
+  #wrapper {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
 
 }
 
 /*1 per row*/
-@media (max-aspect-ratio: 6/9)
-{
+@media (max-aspect-ratio: 6/9) {
 
-  .button a{
+  .button a {
     font-size: 3vw;
-    }
+  }
 
   .container {
     width: 100vw;
     height: 56.25vw;
     margin-top: -7px;
   }
-    
-  .year, .title, .info
-  {
+
+  .year, .title, .info {
     font-size: 4.5vw;
   }
 
-  #footer
-  {
+  #footer {
     margin-left: 10%;
     margin-right: 10%;
   }
 
-  #wrapper
-  {
+  #wrapper {
     font-size: 1.5vw;
     padding-left: 10%;
     padding-right: 15%;
   }
 }
 
-@media (max-width: 1100px)
-{
-  #intro
-  {
+@media (max-width: 1100px) {
+  #intro {
     font-size: 1.7vmin;
   }
 }
 
 /*2 per row*/
-@media (max-width: 800px)
-{
-  .container
-  {
+@media (max-width: 800px) {
+  .container {
     width: 49vw;
     height: 27.9vw;
   }
 
-  .button a
-  {
+  .button a {
     font-size: 1vw;
   }
 
-  .year, .title, .info
-  {
+  .year, .title, .info {
     font-size: 2vw;
   }
 }
 
-.container:hover .icon img, .container:hover .button, .container:hover .info
-  {
-    opacity: 1;
-  }
+.container:hover .icon img, .container:hover .button, .container:hover .info {
+  opacity: 1;
+}
 
-  .preview, .onhoverpreview {
-    position: absolute;
-    width:  100%;
-    height: 100%;
-  }
+.preview, .onhoverpreview {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
-  .preview, .onhoverpreview {
-    position: absolute;
-    width:  100%;
-    height: 100%;
-  }
+.preview, .onhoverpreview {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 
-  .onhoverpreview
-  {
-    opacity: 1;
-    transition: opacity .35s ease;
-  }
+.onhoverpreview {
+  opacity: 1;
+  transition: opacity .35s ease;
+}
 
-  .container:hover .onhoverpreview
-  {
-    opacity: 0;
-  }
-  
-  .container:hover .title {
-    top: 5%;
-  }
+.container:hover .onhoverpreview {
+  opacity: 0;
+}
 
-  .container:hover .year
-  {
-    top: 75%;
-    opacity: 1;
-  }
+.container:hover .year {
+  top: 75%;
+  opacity: 1;
+}
 
-  #footer
-  {
-    margin-left: 20%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
+ul li {
+  font-size: 2vh;
+  list-style: square;
+}
 
-  .footeritem
-  {
-    margin-left: 5%;
-    display: inline-block;
-    width: 40%;
-  }
+h1 {
+  font-size: 3vh;
+  list-style: square;
+}
 
-  ul li
-  {
-    font-size: 2vh;
-    list-style: square;
-  }
+.container:hover .title {
+  top: 10%;
+}
 
-  h1
-  {
-    font-size: 3vh;
-    list-style: square;
-  }
-  
-  .container:hover .title {
-    top: 5%;
-  }
-
-  .container:hover .year
-  {
-    top: 75%;
-    opacity: 1;
-  }
-
-  #footer
-  {
-    margin-left: 20%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-  }
-
-  .footeritem
-  {
-    margin-left: 5%;
-    display: inline-block;
-    width: 40%;
-  }
-
-  ul li
-  {
-    font-size: 2vh;
-    list-style: square;
-  }
-
-  h1
-  {
-    font-size: 3vh;
-    list-style: square;
-  }
+.container:hover .year {
+  top: 75%;
+  opacity: 1;
+}
