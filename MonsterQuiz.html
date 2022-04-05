@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Xavier Wevers</title>
+    <title>Work - Monster Quiz</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,7 +15,7 @@
 
     <!-- Our Custom CSS -->
     <link type="text/css" rel="stylesheet" href="simple.css" />
-    <link rel="stylesheet" href="sidebar.css">
+    <link type="text/css" rel="stylesheet" href="sidebar.css">
 
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
@@ -24,6 +24,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
         integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
         crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/b68b8e82f4.js" crossorigin="anonymous"></script>
 </head>
 
 <body style="background-color: #3c6e71;">
@@ -35,7 +36,7 @@
                 <strong>XW</strong>
             </div>
             <ul class="list-unstyled components">
-                <li class="active">
+                <li>
                     <a href="index.html">
                         <i class="fas fa-home"></i>
                         Home
@@ -44,14 +45,14 @@
                 <li>
                     <a href="#">
                         <i class="fas fa-briefcase"></i>
-                        About
+                        About Me
                     </a>
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                         <i class="fas fa-copy"></i>
                         Work
                     </a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
+                        <li class="active">
                             <a href="MonsterQuiz.html">Monster Quiz</a>
                         </li>
                         <li>
@@ -68,25 +69,33 @@
                         </li>
                     </ul>
                 </li>
-            </ul>
-            <ul class="list-unstyled CTAs">
                 <li>
                     <a href="mailto:Xavier.Wevers@gmail.com">
                         <i class="fas fa-paper-plane"></i>
-                        Contact
+                        Contact Me
                     </a>
                 </li>
+            </ul>
+            <ul class="list-unstyled CTAs">
                 <li>
-                    <a target="_blank" href="Resumes/Resume_Dutch.pdf"> <i class="fas fa-copy"></i>
+                    <a target="_blank" href="Resumes/Resume_Dutch.pdf"> <i class="fa-solid fa-file"></i>
                         Dutch Resume</a>
                 </li>
                 <li>
-                    <a target="_blank" href="Resumes/Resume_English.pdf"> <i class="fas fa-copy"></i>
+                    <a target="_blank" href="Resumes/Resume_English.pdf"> <i class="fa-solid fa-file"></i>
                         English Resume</a>
                 </li>
                 <li>
-                    <a target="_blank" href="https://github.com/XaviePlayz"> <i class="fas fa-copy"></i>
+                    <a target="_blank" href="https://github.com/XaviePlayz"> <i class="fa-brands fa-github"></i>
                         My GitHub</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.youtube.com/c/XaviePlayz"> <i class="fa-brands fa-youtube"></i>
+                        My YouTube</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.youtube.com/c/XaviePlayz"> <i class="fa-solid fa-book"></i>
+                        My Book</a>
                 </li>
             </ul>
         </nav>
@@ -94,28 +103,27 @@
         <!-- Page Content  -->
         <div id="content">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <div style="background-color: #3c6e71;">
-                        <div class="container-fluid">
-                            <button type="button" id="sidebarCollapse" class="btn btn-info">
-                                <i class="fas fa-align-left"></i>
-                            </button>
-                            <h2 id="title">XAVIER WEVERS</h2>
-                            <h5 id="intro">My name is Xavier Wevers and I specialize myself in the making of games, I do
-                                this using Unity
-                                and C#. I am currently studying Software-Development at SintLucas
-                                Eindhoven in the Netherlands. Before I started developing Unity games, I was known as a
-                                YouTube content
-                                creator designing games inside of Fortnite</h5>
-                            <p id="intro"
-                                style="color: rgba(255, 255, 255, 0.315); font-size: small; text-align: center;">
-                                Website,
-                                thumbnails and videos made by me.<br>
-                            <div id="myBtnContainer" style="padding-bottom: 9px; text-align: center;">
-
-                            </div>
-                        </div>
+                <div style="background-color: #3c6e71;">
+                    <div class="container-fluid">
+                        <button type="button" id="sidebarCollapse" class="btn btn-info">
+                            <i class="fas fa-align-left"></i>
+                        </button>
+                        <!-- Introduction -->
+                        <h2 id="title">XAVIER WEVERS</h2>
+                        <h5 id="intro">My name is Xavier Wevers and I specialize myself in the making of games, I do
+                            this using
+                            Unity and C#. I am currently studying Software-Development at SintLucas
+                            Eindhoven in the Netherlands. Before I started developing Unity games, I was known as a
+                            YouTube content
+                            creator designing games inside of Fortnite. During the Covid-19 pandemic my channel reached
+                            its golden age.
+                            I had millions of players enjoying my games in Fortnite. I loved the feeling, having people
+                            play with what I made!
+                            This was a big factor for me why I chose to start with actual game development.</h5>
+                        <p id="intro" style="color: rgba(255, 255, 255, 0.315); font-size: small; text-align: center;">
+                            Website, thumbnails and videos made by me.<br></p>
                     </div>
+                </div>
             </nav>
             <div class="row">
                 <p class="extraInfo">This is a project I worked on with one other developer and 3 artists.
