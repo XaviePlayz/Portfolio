@@ -48,7 +48,7 @@ h5 {
   text-align: center;
 }
 
-#intro{
+#intro {
   text-align: justify;
   height: max-content;
   font-size: 2vh;
@@ -102,6 +102,7 @@ h5 {
   font-size: 4vh;
   color: rgb(255, 255, 255);
 }
+
 .extraInfoPageTitle {
   margin-left: 10%;
   margin-right: 10%;
@@ -118,9 +119,13 @@ h5 {
 }
 
 .year {
+  margin-left: 45%;
+  margin-right: 45%;
+  width: 10%;
   opacity: 0;
   top: 50%;
   font-size: 2vmin;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .button {

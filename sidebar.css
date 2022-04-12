@@ -1,4 +1,5 @@
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
@@ -52,10 +53,15 @@ span {
 
 .wrapper {
     display: flex;
+    justify-content: space-between;
     align-items: stretch;
 }
 
 #sidebar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+
     min-width: 250px;
     max-width: 250px;
     background: #7386D5;
@@ -64,8 +70,8 @@ span {
 }
 
 #sidebar.active {
-    min-width: 80px;
-    max-width: 80px;
+    min-width: 120px;
+    max-width: 120px;
     text-align: center;
 }
 
@@ -207,6 +213,7 @@ a.article:hover {
         text-align: center;
         margin-left: -80px !important;
     }
+
     .dropdown-toggle::after {
         top: auto;
         bottom: 10px;
@@ -215,35 +222,45 @@ a.article:hover {
         -ms-transform: translateX(50%);
         transform: translateX(50%);
     }
+
     #sidebar.active {
         margin-left: 0 !important;
     }
+
     #sidebar .sidebar-header h3,
     #sidebar .CTAs {
         display: none;
     }
+
     #sidebar .sidebar-header strong {
         display: block;
     }
+
     #sidebar ul li a {
         padding: 20px 10px;
     }
+
     #sidebar ul li a span {
         font-size: 0.85em;
     }
+
     #sidebar ul li a i {
         margin-right: 0;
         display: block;
     }
+
     #sidebar ul ul a {
         padding: 10px !important;
     }
+
     #sidebar ul li a i {
         font-size: 1.3em;
     }
+
     #sidebar {
         margin-left: 0;
     }
+
     #sidebarCollapse span {
         display: none;
     }
