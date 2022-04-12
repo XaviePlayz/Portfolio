@@ -53,15 +53,10 @@ span {
 
 .wrapper {
     display: flex;
-    justify-content: space-between;
     align-items: stretch;
 }
 
 #sidebar {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-
     min-width: 250px;
     max-width: 250px;
     background: #7386D5;
