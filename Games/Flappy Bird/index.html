@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flappy Bird 2.0 - Xavier Wevers</title>
+    <link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet">
+    <style>        
+        canvas{
+            border: 2px solid #000;
+            display: block;
+            margin: 0 auto;
+        }
+
+        div {
+            width: 200px;
+            text-align: center;
+            margin: 0 auto;
+            margin-top: -75px;        
+        }
+
+        button{
+            border: none; 
+        }
+
+        #button1{
+            background-color: #fcb700;                     
+        }
+        
+    </style>
+</head>
+<body>
+    <canvas id="bird" width="320" height="480"></canvas>
+    <script src="game.js"></script>
+
+    <div id="gamemodeButtons">
+        <button id="button1" onclick="selectGamemode(1)">CLASSIC</button>
+        <button id="button2" onclick="selectGamemode(2)">CLOSING PIPES</button>
+        <button id="button3" onclick="selectGamemode(3)">LOW GRAVITY</button>
+    </div>
+
+</body>
+</html>
