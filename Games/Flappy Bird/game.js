@@ -5,6 +5,7 @@ const ctx = cvs.getContext("2d");
 // GAME VARS AND CONSTS
 let frames = 0;
 const DEGREE = Math.PI/180;
+var fps, fpsInterval, now, then, elapsed;
 
 // LOAD SPRITES IMAGES
 const sprites = new Image();
@@ -27,23 +28,22 @@ const DIE = new Audio();
 DIE.src = "audio/die.wav";
 
 // GAME STATE
-let gamemodeSelected = 0;
 var mayShortenGap = false;
 var lowGravity = false;
 var playingGamemode = 1;
 const state = {
-    current : 0,
-    getReady : 0,
-    game : 1,
-    over : 2
+    current: 0,
+    getReady: 0,
+    game: 1,
+    over: 2
 }
 
 // START BUTTON COORD
 const startBtn = {
-    x : 120,
-    y : 263,
-    w : 83,
-    h : 29
+    x: 120,
+    y: 263,
+    w: 83,
+    h: 29
 }
 
 // GAMEMODE SELECTION
@@ -136,12 +136,12 @@ cvs.addEventListener("click", function(evt){
 
 // BACKGROUND
 const bg = {
-    sX : 0,
-    sY : 0,
-    w : 275,
-    h : 226,
-    x : 0,
-    y : cvs.height - 226,
+    sX: 0,
+    sY: 0,
+    w: 275,
+    h: 226,
+    x: 0,
+    y: cvs.height - 226,
     
     draw: function(){
         ctx.drawImage(sprites, this.sX, this.sY, this.w, this.h, this.x, this.y, this.w, this.h);
@@ -160,7 +160,7 @@ const fg = {
     x: 0,
     y: cvs.height - 112,
     
-    dx : 2,
+    dx: 2,
     
     draw: function(){
         ctx.drawImage(sprites, this.sX, this.sY, this.w, this.h, this.x, this.y, this.w, this.h);
@@ -178,24 +178,24 @@ const fg = {
 // BIRD
 const bird = {
     animation: [
-        {sX: 276, sY : 112},
-        {sX: 276, sY : 139},
-        {sX: 276, sY : 164},
-        {sX: 276, sY : 139}
+        {sX: 276, sY: 112},
+        {sX: 276, sY: 139},
+        {sX: 276, sY: 164},
+        {sX: 276, sY: 139}
     ],
-    x : 50,
-    y : 150,
-    w : 34,
-    h : 26,
+    x: 50,
+    y: 150,
+    w: 34,
+    h: 26,
     
-    radius : 10,
+    radius: 10,
     
-    frame : 0,
+    frame: 0,
     
-    gravity : 0.22,
-    jump : 4.3,
-    speed : 0,
-    rotation : 0,
+    gravity: 0.22,
+    jump: 4.3,
+    speed: 0,
+    rotation: 0,
     
     draw: function(){
         let bird = this.animation[this.frame];
@@ -214,16 +214,17 @@ const bird = {
     
     update: function(){
         // IF THE GAME STATE IS "GET READY" STATE, THE BIRD MUST FLAP SLOWLY
-        this.period = state.current == state.getReady ? 10 : 5;
+        this.period = state.current == state.getReady ? 10: 5;
         // INCREMENT THE FRAME BY 1, EACH PERIOD
-        this.frame += frames%this.period == 0 ? 1 : 0;
+        this.frame += frames%this.period == 0 ? 1: 0;
         // FRAME GOES FROM 0 To 4, THEN AGAIN TO 0
         this.frame = this.frame%this.animation.length;
         
         if(state.current == state.getReady){
             this.y = 150; // RESET POSITION OF THE BIRD AFTER GAME OVER
-            this.rotation = 0 * DEGREE;
-        }else{
+            this.rotation = 0;
+        }
+        else{
             this.speed += this.gravity;
             this.y += this.speed;
             
@@ -239,7 +240,8 @@ const bird = {
             if(this.speed >= this.jump){
                 this.rotation = 90 * DEGREE;
                 this.frame = 1;
-            }else{
+            }
+            else{
                 this.rotation = -25 * DEGREE;
             }
         }
@@ -252,12 +254,12 @@ const bird = {
 
 // GET READY MESSAGE
 const getReady = {
-    sX : 0,
-    sY : 228,
-    w : 173,
-    h : 152,
-    x : cvs.width/2 - 173/2,
-    y : 80,
+    sX: 0,
+    sY: 228,
+    w: 173,
+    h: 152,
+    x: cvs.width/2 - 173/2,
+    y: 80,
     
     draw: function(){
         if(state.current == state.getReady){
@@ -269,12 +271,12 @@ const getReady = {
 
 // GAME OVER MESSAGE
 const gameOver = {
-    sX : 175,
-    sY : 228,
-    w : 225,
-    h : 202,
-    x : cvs.width/2 - 225/2,
-    y : 90,
+    sX: 175,
+    sY: 228,
+    w: 225,
+    h: 202,
+    x: cvs.width/2 - 225/2,
+    y: 90,
     
     draw: function(){
         if(state.current == state.over){
@@ -286,23 +288,23 @@ const gameOver = {
 
 // PIPES
 const pipes = {
-    position : [],
+    position: [],
     
-    top : {
-        sX : 553,
-        sY : 0
+    top: {
+        sX: 553,
+        sY: 0
     },
     bottom:{
-        sX : 502,
-        sY : 0
+        sX: 502,
+        sY: 0
     },
     
-    w : 53,
-    h : 400,
-    gap : 100,
-    passed : 0,
-    maxYPos : -150,
-    dx : 2,
+    w: 53,
+    h: 400,
+    gap: 100,
+    passed: 0,
+    maxYPos: -150,
+    dx: 2,
     
     draw: function(){
         for(let i  = 0; i < this.position.length; i++){
@@ -324,8 +326,8 @@ const pipes = {
         
         if(frames%100 == 0){
             this.position.push({
-                x : cvs.width,
-                y : this.maxYPos * ( Math.random() + 1)
+                x: cvs.width,
+                y: this.maxYPos * ( Math.random() + 1)
             });
         }
         for(let i = 0; i < this.position.length; i++){
@@ -378,7 +380,7 @@ const pipes = {
         }
     },
     
-    reset : function(){
+    reset: function(){
         this.position = [];
         if(mayShortenGap){
             pipes.gap = 140;
@@ -395,12 +397,12 @@ const pipes = {
 
 // SCORE
 const score= {
-    best1 : parseInt(localStorage.getItem("best1")) || 0,
-    best2 : parseInt(localStorage.getItem("best2")) || 0,
-    best3 : parseInt(localStorage.getItem("best3")) || 0,
-    value : 0,
+    best1: parseInt(localStorage.getItem("best1")) || 0,
+    best2: parseInt(localStorage.getItem("best2")) || 0,
+    best3: parseInt(localStorage.getItem("best3")) || 0,
+    value: 0,
     
-    draw : function(){
+    draw: function(){
         ctx.fillStyle = "#FFF";
         ctx.strokeStyle = "#000";
         
@@ -431,19 +433,19 @@ const score= {
         }
     },
     
-    reset : function(){
+    reset: function(){
         this.value = 0;
     }
 }
 
 // MEDALS
 const medal = {
-    sX : 360,
-    sY : 158,
-    x : 73,
-    y : 176,
-    w : 44,
-    h : 44,
+    sX: 360,
+    sY: 158,
+    x: 73,
+    y: 176,
+    w: 44,
+    h: 44,
 
     draw: function(){
         if(state.current == state.over){
@@ -479,7 +481,7 @@ const medal = {
 function draw(){
     if(bird.jump == 4.6){
         ctx.fillStyle = "#008793";
-    }
+    } 
     else{
         ctx.fillStyle = "#70c5ce";
     }
@@ -503,12 +505,30 @@ function update(){
     pipes.update();
 }
 
-// LOOP
-function loop(){
-    update();
-    draw();
-    frames++;
-    
-    requestAnimationFrame(loop);
+// INITIALIZING THE TIMER VARIABLES AND STARTING THE ANIMATION
+function startAnimating(fps) {
+    fpsInterval = 850 / fps;
+    then = Date.now();
+    loop();
 }
-loop();
+
+// LOOP
+function loop(){ 
+    window.requestAnimationFrame(loop);
+    
+    now = Date.now();
+    elapsed = now - then;
+
+    // IF ENOUGH TIME HAS ELAPSED, DRAW THE NEXT FRAME
+    if (elapsed > fpsInterval) {
+
+        // GET READY FOR NEXT FRAME
+        then = now - (elapsed % fpsInterval);
+
+        // DRAW ANIMATION
+        update();
+        draw();
+        frames++; 
+    }
+}
+startAnimating(60);
