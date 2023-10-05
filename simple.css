@@ -151,6 +151,10 @@ h5 {
   font-size: 0.7vw;
 }
 
+.button a:hover {
+  background-color: rgba(85, 85, 85, 0.3);
+}
+
 /*2 per row*/
 @media (max-aspect-ratio: 6/7) {
   .container {
@@ -292,7 +296,8 @@ body {
 }
 #cookiePopup {
   background-color: #ffffff;
-  position: absolute;
+  position: fixed;
+  z-index: 1000;
   font-size: 14px;
   width: 70vw;
   max-width: 42.85em;
@@ -326,6 +331,11 @@ body {
   margin: auto;
   border-radius: 5px;
 }
+
+#cookiePopup button:hover {
+  background-color: #4a3ea5;
+}
+
 #cookiePopup a {
   color: #6859fe;
 }
@@ -339,6 +349,7 @@ body {
   bottom: 2em;
   right: 2em;
 }
+
 @media only screen and (max-width: 37.5em) {
   #cookiePopup {
     width: 100%;
