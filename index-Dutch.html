@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html>
-
+    
 <head>
   <title>Portfolio - Xavier Wevers</title>
-
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="keywords"
     content="GameDeveloper, SoftwareDeveloper, XaviePlayz, XavierPlayz, Xavier, Xavier Wevers, XavierWevers">
+  </head>
 
   <!-- Bootstrap CSS CDN -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
     integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 
-  <!-- Our Custom CSS -->
+  <!-- My Custom CSS -->
   <link type="text/css" rel="stylesheet" href="simple.css" />
   <link type="text/css" rel="stylesheet" href="sidebar.css">
 
@@ -26,9 +25,22 @@
     integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
     crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/b68b8e82f4.js" crossorigin="anonymous"></script>
-</head>
 
-<body style="background-color: #3c6e71;">
+  <!-- jQuery CDN - Slim version (=without AJAX) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  
+    <!-- Popper.JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+    crossorigin="anonymous"></script>
+  
+    <!-- Bootstrap JS -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"crossorigin="anonymous"></script>
+
+<body style="background-color: #e0e0e0;">
   <div class="wrapper">
     <!-- Sidebar  -->
     <nav id="sidebar">
@@ -37,23 +49,17 @@
         <strong>XW</strong>
       </div>
       <ul class="list-unstyled components">
-        <li class="active">
-          <a class="sidebarButton" href="index-Dutch.html">
-            <i class="fas fa-home"></i>
-            Home
-          </a>
-        </li>
         <li>
           <a class="sidebarButton" href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
             <i class="fas fa-briefcase"></i>
-            Werk
+            Extra Projecten
           </a>
           <ul class="collapse list-unstyled" id="pageSubmenu">
             <li>
               <a class="sidebarButton" target="_blank" href="https://www.youtube.com/c/XaviePlayz"> <i class="fa-brands fa-youtube"></i>XaviePlayz</a>
             </li>
             <li>
-              <a class="sidebarButton" target="_blank" href="documents/Nightmoor.pdf"> <i class="fa-solid fa-book"></i>Nightmoor</a>
+              <a class="sidebarButton" target="_blank" href="documents/Nightmoor (As Darkness Falls) [BOOK ONE].pdf"> <i class="fa-solid fa-book"></i>Nightmoor</a>
             </li>
           </ul>
         </li>
@@ -87,13 +93,16 @@
 
     <!-- Page Content  -->
     <div id="content">
-      <div style="background-color: #3c6e71;">
+      <div style="background-color: #e0e0e0;">
         <div class="container-fluid">
           <button type="button" id="sidebarCollapse" class="btn btn-info">
             <i class="fas fa-align-left"></i>
           </button>
           <!-- Introduction -->
-          <h2 id="title">XAVIER WEVERS</h2>
+          <h2 id="title">
+            <img src="images/Profile.jpg" alt="Xavier Wevers Profile Photo" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+            XAVIER WEVERS
+          </h2>
           <h5 id="intro">Mijn naam is Xavier Wevers en ik ben gespecialiseerd in het maken van games,
             dit doe ik met behulp van Unity en C#. Ik studeer momenteel Software-Development aan SintLucas Eindhoven in
             Nederland.
@@ -103,15 +112,82 @@
             mijn spellen in Fortnite.
             Ik hield van het gevoel, mensen te laten spelen met wat ik had gemaakt! Dit was een grote factor voor mij
             waarom ik ervoor koos om te beginnen met echte game-ontwikkeling.</h5>
-          <p id="intro" style="color: rgba(255, 255, 255, 0.315); font-size: small; text-align: center;">
-            Website, thumbnails and videos made by me.<br></p>
-          <div id="myBtnContainer" style="padding-bottom: 9px; text-align: center;">
-          </div>
+          <p id="intro" style="font-size: small; text-align: center;">
+            Website, thumbnails and videos gemaakt door mij.<br></p>
+          <div id="myBtnContainer" style="padding-bottom: 9px; text-align: center;"></div>
         </div>
       </div>
+      <div id="tagButtons">
+        <button class="tagButton" onclick="filterProjects('all')">Alle</button>
+        <button class="tagButton" onclick="filterProjects('unity')">Unity Projecten</button>
+        <button class="tagButton" onclick="filterProjects('javascript')">JavaScript Projecten</button>
+        <button class="tagButton" onclick="filterProjects('fortnite')">Fortnite Projecten</button>
+      </div>
       <div class="row">
-        <div class="container">
-          <!-- Flappy Bird -->
+        <div class="container" data-tags="fortnite">
+          <!----- Hunt Royale: Island Scavenger Showdown ----->
+          <!-- Video backdrop -->
+          <video class="preview" loop="true" muted>
+            <source src="videos/Under Construction.mp4" type="video/mp4">
+          </video>
+          <!-- Img backdrop -->
+          <img class="onhoverpreview" src="images/Under Construction.jpg" alt="Flappy Bird">
+          <!-- Title & Info -->
+          <h3 class="title">Hunt Royale:<br>Island Scavenger Showdown</h3>
+          <p class="year">Binnenkort [2024]</p>
+          <p class="info">Ga op een speurtocht over verschillende eilanden. Ontdek, overleef en zegevier.</p>
+          <!-- Button links -->
+        </div>
+        <div class="container" data-tags="fortnite">
+          <!----- Piggy: Chapter 1 - 4 ----->
+          <!-- Video backdrop -->
+          <video class="preview" loop="true" muted>
+            <source src="videos/Fortnite Piggy.mp4" type="video/mp4">
+          </video>
+          <!-- Img backdrop -->
+          <img class="onhoverpreview" src="images/Piggy.webp" alt="Flappy Bird">
+          <!-- Title & Info -->
+          <h3 class="title">Piggy: Chapter 1 - 4</h3>
+          <p class="year">2020 - 2024</p>
+          <p class="info">Verken verschillende spelmodes, ontdek verborgen voorwerpen en bepaal je ontsnappingsstrategie. Origineel - Minitoon</p>
+          <!-- Button links -->
+          <div class="button"><a target="_blank" href="https://www.fortnite.com/@xavieplayz/8840-5689-4557">SPEEL</a></div>
+        </div>
+      <div class="line"></div>
+      <div class="container" data-tags="fortnite">
+        <!----- Skyward Soar ----->
+        <!-- Video backdrop -->
+        <video class="preview" loop="true" muted>
+          <source src="videos/Skyward Soar.mp4" type="video/mp4">
+        </video>
+        <!-- Img backdrop -->
+        <img class="onhoverpreview" src="images/SkywardSoar.webp" alt="Monster Quiz">
+        <!-- Title & Info -->
+        <h3 class="title">Skyward Soar</h3>
+        <p class="year">2023</p>
+        <p class="info">Stijg op door de afbrokkelende aarde, overwin obstakels en verover een plek op het evacuatieruimteschip. Kun jij ontsnappen naar een nieuwe leefbare planeet?</p>
+        <!-- Button links -->
+        <div class="button"><a target="_blank" href="https://www.fortnite.com/@xavieplayz/4859-5165-3300">SPEEL</a></div>
+      </div>
+        <div class="container" data-tags="unity">
+          <!----- Nocturnal Escape ----->
+          <!-- Video backdrop -->
+          <video class="preview" loop="true" muted>
+            <source src="videos/Nocturnal Escape.mp4" type="video/mp4">
+          </video>
+          <!-- Img backdrop -->
+          <img class="onhoverpreview" src="images/Nocturnal Escape.png" alt="Monster Quiz">
+          <!-- Title & Info -->
+          <h3 class="title">Nocturnal Escape</h3>
+          <p class="year">2023</p>
+          <p class="info">Tienermeisje Mila is alleen thuis wanneer een mysterieus wezen plotseling het huis binnenkomt.</p>
+          <!-- Button links -->
+          <div class="button"><a target="_blank" href="Games/MonsterQuiz/MonsterQuiz.html">SPEEL</a></div>
+          <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/MonsterQuiz">CODE</a></div>
+        </div>
+      <div class="line"></div>
+        <div class="container" data-tags="javascript">
+          <!----- Flappy Bird ----->
           <!-- Video backdrop -->
           <video class="preview" loop="true" muted>
             <source src="videos/FlappyBird.mp4" type="video/mp4">
@@ -121,13 +197,13 @@
           <!-- Title & Info -->
           <h3 class="title">Flappy Bird</h3>
           <p class="year">2022</p>
-          <p class="info">Speel de originele Flappy Bird, maar dan met een twist!</p>
+          <p class="info">Speel het originele Flappy Bird, maar dan met een twist!</p>
           <!-- Button links -->
           <div class="button"><a target="_blank" href="Games/Flappy Bird/index.html">SPEEL</a></div>
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/FlappyBird">CODE</a></div>
         </div>
-        <div class="container">
-          <!-- Monster Quiz -->
+        <div class="container" data-tags="unity">
+          <!----- Monster Quiz ----->
           <!-- Video backdrop -->
           <video class="preview" loop="true" muted>
             <source src="videos/Monster Quiz.mp4" type="video/mp4">
@@ -137,14 +213,14 @@
           <!-- Title & Info -->
           <h3 class="title">Monster Quiz</h3>
           <p class="year">2022</p>
-          <p class="info">Quiz om jezelf te visualiseren als een monster. Toont ieders uniciteit!</p>
+          <p class="info">Doe de Monster Quiz om je innerlijke monster visueel te belichamen en je unieke eigenschappen te laten zien!</p>
           <!-- Button links -->
           <div class="button"><a target="_blank" href="Games/MonsterQuiz/MonsterQuiz.html">SPEEL</a></div>
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/MonsterQuiz">CODE</a></div>
         </div>
-        <div class="line"></div>
-        <div class="container">
-          <!-- Disco Jam-->
+      <div class="line"></div>
+        <div class="container" data-tags="unity">
+          <!----- Disco Jam ----->
           <!-- Video backdrop -->
           <video class="preview" loop="true" muted>
             <source src="videos/Disco Jam.mp4" type="video/mp4">
@@ -154,13 +230,13 @@
           <!-- Title & Info -->
           <h3 class="title">Disco Jam</h3>
           <p class="year">2022</p>
-          <p class="info">2D Rythm Game voor de arcade cabine, gebruik vaardigheden om je tegenstander te verslaan!</p>
+          <p class="info">Duik in de wereld van ritme met dit 2D arcadespel! Laat je vaardigheden de vrije loop om tegenstanders te verslaan en de arcadehut te veroveren!</p>
           <!-- Button links -->
           <div class="button"><a target="_blank" href="https://xavieplayz.itch.io/discojam">SPEEL</a></div>
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/DiscoJam">CODE</a></div>
         </div>
-        <div class="container">
-          <!-- 2D Platformer -->
+        <div class="container" data-tags="unity">
+          <!----- 2D Platformer ----->
           <!-- Video backdrop -->
           <video class="preview" loop="true" muted>
             <source src="videos/2D Platformer.mp4" type="video/mp4">
@@ -170,14 +246,14 @@
           <!-- Title & Info -->
           <h3 class="title">2D Platformer</h3>
           <p class="year">2022</p>
-          <p class="info">Vecht tegen vijanden, vermijd spikes, zoek geheimen en voltooi het level!</p>
+          <p class="info">Fight Enemies, Avoid Spikes, Find Secrets and beat the level!</p>
           <!-- Button links -->
           <div class="button"><a target="_blank" href="Games/2D Platformer/2DPlatformer.html">SPEEL</a></div>
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/2DPlatformer">CODE</a></div>
         </div>
-        <div class="line"></div>
-        <div class="container">
-          <!-- X-Tension -->
+      <div class="line"></div>
+        <div class="container" data-tags="unity">
+          <!----- X-Tension ----->
           <!-- Video backdrop -->
           <video class="preview" loop="true" muted>
             <source src="videos/X-Tension.mp4" type="video/mp4">
@@ -187,12 +263,12 @@
           <!-- Title & Info -->
           <h3 class="title">X-Tension</h3>
           <p class="year">2021</p>
-          <p class="info">3D First-Person Horror Game met gerandomiseerde maps, versla de timer om te winnen!</p>
+          <p class="info">Stort je in een ijzingwekkende 3D first-person horrorervaring met willekeurig gemaakte levels. Race tegen de timer om als winnaar uit de bus te komen!</p>
           <!-- Button links -->
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/X-Tension">CODE</a></div>
         </div>
-        <div class="container">
-          <!-- Pong -->
+        <div class="container" data-tags="unity">
+          <!----- Pong ----->
           <!-- Video backdrop -->
           <video class="preview" loop="true" muted>
             <source src="videos/Pong.mp4" type="video/mp4">
@@ -202,8 +278,7 @@
           <!-- Title & Info -->
           <h3 class="title">Pong</h3>
           <p class="year">2020</p>
-          <p class="info">2D Arcade Game <br>
-            Inclusief een singleplayer mode & multiplayer mode! </p>
+          <p class="info">Beleef het spel in zowel de singleplayer- als de multiplayermodus voor eindeloos vermaak!</p>
           <!-- Button links -->
           <div class="button"><a target="_blank" href="Games/Pong/Pong.html">SPEEL</a></div>
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/Pong">CODE</a></div>
@@ -211,19 +286,17 @@
       </div>
     </div>
   </div>
-  <!-- jQuery CDN - Slim version (=without AJAX) -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <!-- Popper.JS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
-    integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-    crossorigin="anonymous"></script>
-  <!-- Bootstrap JS -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
-    integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-    crossorigin="anonymous"></script>
-</body>
+    <div id="cookiePopup" class="hide">
+      <img src="images/Cookie.png"/>
+      <p>
+        Deze website maakt gebruik van cookies voor uw surfervaring en
+        relevante informatie. Voordat u doorgaat met het gebruik van onze website, gaat u akkoord &
+        accepteert u ons <a href="https://www.cookiepolicygenerator.com/live.php?token=wE7faZm89uEAPvZl3N40N37GOLK4jPqK">Cookiebeleid en privacy.</a>
+      </p>
+      <button id="acceptCookie">Accept</button>
+    </div>
+    
+  </body>
 
 </html>
 
@@ -276,4 +349,112 @@
         break;
     }
   }
+
+  // Clickable Tags
+
+  window.onload = () => {
+    setTimeout(() => {
+      checkCookie();
+      filterProjects('all'); // Show all projects initially
+    }, 2000);
+  };
+
+function toggleLines() {
+  const projects = document.querySelectorAll('.container');
+  for (let i = 0; i < projects.length; i++) {
+    const currentProject = projects[i];
+    const nextProject = projects[i + 1];
+
+    // Check if the next project exists and is visible
+    if (nextProject && currentProject.style.display !== 'none' && nextProject.style.display !== 'none') {
+      currentProject.nextElementSibling.classList.remove('hide-line');
+    } else {
+      currentProject.nextElementSibling.classList.add('hide-line');
+    }
+  }
+}
+
+function filterProjects(tag) {
+  const containers = document.getElementsByClassName("container");
+
+  for (let i = 0; i < containers.length; i++) {
+    const projectTags = containers[i].dataset.tags.split(' ');
+
+    if (tag === 'all' || projectTags.includes(tag)) {
+      containers[i].style.display = 'block';
+    } else {
+      containers[i].style.display = 'none';
+    }
+  }
+
+  toggleLines(); // Call toggleLines after filtering
+}
+
+
+// Handle tag clicks
+function handleTagClick(tag) {
+  handleProjectVisibility(tag);
+}
+
+// Check if a container should have a line after it
+function checkLineVisibility(container) {
+  const nextContainer = container.nextElementSibling;
+  if (nextContainer && !nextContainer.classList.contains('hide')) {
+    container.querySelector('.line').classList.remove('hide-line');
+  } else {
+    container.querySelector('.line').classList.add('hide-line');
+  }
+}
+
+// Function to handle project visibility
+function handleProjectVisibility(tag) {
+  const containers = document.getElementsByClassName('container');
+
+  for (let container of containers) {
+    if (tag === 'all' || container.classList.contains(tag)) {
+      container.classList.remove('hide');
+    } else {
+      container.classList.add('hide');
+    }
+
+    // Check line visibility every time we toggle project visibility
+    checkLineVisibility(container);
+  }
+}
+
+  //Cookie Banner
+  let popUp = document.getElementById("cookiePopup");
+  //When user clicks the accept button
+  document.getElementById("acceptCookie").addEventListener("click", () => {
+  //Create date object
+  let d = new Date();
+  //Increment the current time by 1 minute (cookie will expire after 1 minute)
+  d.setMinutes(2 + d.getMinutes());
+  //Create Cookie withname = myCookieName, value = thisIsMyCookie and expiry time=1 minute
+  document.cookie = "myCookieName=thisIsMyCookie; expires = " + d + ";";
+  //Hide the popup
+  popUp.classList.add("hide");
+  popUp.classList.remove("show");
+  });
+  //Check if cookie is already present
+  const checkCookie = () => {
+  //Read the cookie and split on "="
+  let input = document.cookie.split("=");
+  //Check for our cookie
+  if (input[0] == "myCookieName") {
+    //Hide the popup
+    popUp.classList.add("hide");
+    popUp.classList.remove("show");
+  } else {
+    //Show the popup
+    popUp.classList.add("show");
+    popUp.classList.remove("hide");
+  }
+  };
+  //Check if cookie exists when page loads
+  window.onload = () => {
+  setTimeout(() => {
+    checkCookie();
+  }, 2000);
+};
 </script>

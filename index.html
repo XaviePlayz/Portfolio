@@ -99,7 +99,10 @@
             <i class="fas fa-align-left"></i>
           </button>
           <!-- Introduction -->
-          <h2 id="title">XAVIER WEVERS</h2>
+          <h2 id="title">
+            <img src="images/Profile.jpg" alt="Xavier Wevers Profile Photo" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+            XAVIER WEVERS
+          </h2>
           <h5 id="intro">My name is Xavier Wevers and I specialize myself in the making of games, I do this using
             Unity and C#. I am currently studying Software-Development at SintLucas
             Eindhoven in the Netherlands. Before I started developing Unity games, I was known as a YouTube content
@@ -119,6 +122,68 @@
         <button class="tagButton" onclick="filterProjects('fortnite')">Fortnite Projects</button>
       </div>
       <div class="row">
+        <div class="container" data-tags="fortnite">
+          <!----- Hunt Royale: Island Scavenger Showdown ----->
+          <!-- Video backdrop -->
+          <video class="preview" loop="true" muted>
+            <source src="videos/Under Construction.mp4" type="video/mp4">
+          </video>
+          <!-- Img backdrop -->
+          <img class="onhoverpreview" src="images/Under Construction.jpg" alt="Flappy Bird">
+          <!-- Title & Info -->
+          <h3 class="title">Hunt Royale:<br>Island Scavenger Showdown</h3>
+          <p class="year">Coming Soon [2024]</p>
+          <p class="info">Embark on a scavenger hunt across diverse islands. Uncover, survive, triumph.</p>
+          <!-- Button links -->
+        </div>
+        <div class="container" data-tags="fortnite">
+          <!----- Piggy: Chapter 1 - 4 ----->
+          <!-- Video backdrop -->
+          <video class="preview" loop="true" muted>
+            <source src="videos/Fortnite Piggy.mp4" type="video/mp4">
+          </video>
+          <!-- Img backdrop -->
+          <img class="onhoverpreview" src="images/Piggy.webp" alt="Flappy Bird">
+          <!-- Title & Info -->
+          <h3 class="title">Piggy: Chapter 1 - 4</h3>
+          <p class="year">2020 - 2024</p>
+          <p class="info">Explore various modes, uncover hidden items, and strategize your escape. Original - Minitoon</p>
+          <!-- Button links -->
+          <div class="button"><a target="_blank" href="https://www.fortnite.com/@xavieplayz/8840-5689-4557">PLAY</a></div>
+        </div>
+      <div class="line"></div>
+      <div class="container" data-tags="fortnite">
+        <!----- Skyward Soar ----->
+        <!-- Video backdrop -->
+        <video class="preview" loop="true" muted>
+          <source src="videos/Skyward Soar.mp4" type="video/mp4">
+        </video>
+        <!-- Img backdrop -->
+        <img class="onhoverpreview" src="images/SkywardSoar.webp" alt="Monster Quiz">
+        <!-- Title & Info -->
+        <h3 class="title">Skyward Soar</h3>
+        <p class="year">2023</p>
+        <p class="info">Ascend through crumbling Earth, conquer obstacles, and secure a spot on the evacuation spaceship. Can you escape to a new livable planet?</p>
+        <!-- Button links -->
+        <div class="button"><a target="_blank" href="https://www.fortnite.com/@xavieplayz/4859-5165-3300">PLAY</a></div>
+      </div>
+        <div class="container" data-tags="unity">
+          <!----- Nocturnal Escape ----->
+          <!-- Video backdrop -->
+          <video class="preview" loop="true" muted>
+            <source src="videos/Nocturnal Escape.mp4" type="video/mp4">
+          </video>
+          <!-- Img backdrop -->
+          <img class="onhoverpreview" src="images/Nocturnal Escape.png" alt="Monster Quiz">
+          <!-- Title & Info -->
+          <h3 class="title">Nocturnal Escape</h3>
+          <p class="year">2023</p>
+          <p class="info">Teenage girl Mila is home alone when a mysterious creature suddenly enters the house.</p>
+          <!-- Button links -->
+          <div class="button"><a target="_blank" href="Games/Nocturnal Escape/Nocturnal Escape.html">PLAY</a></div>
+          <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/NocturnalEscape">CODE</a></div>
+        </div>
+      <div class="line"></div>
         <div class="container" data-tags="javascript">
           <!----- Flappy Bird ----->
           <!-- Video backdrop -->
@@ -146,7 +211,7 @@
           <!-- Title & Info -->
           <h3 class="title">Monster Quiz</h3>
           <p class="year">2022</p>
-          <p class="info">Quiz to visualize yourself as a Monster. Shows everyone's uniqueness!</p>
+          <p class="info">Take the Monster Quiz to visually embody your inner monster and showcase your unique traits!</p>
           <!-- Button links -->
           <div class="button"><a target="_blank" href="Games/MonsterQuiz/MonsterQuiz.html">PLAY</a></div>
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/MonsterQuiz">CODE</a></div>
@@ -163,7 +228,7 @@
           <!-- Title & Info -->
           <h3 class="title">Disco Jam</h3>
           <p class="year">2022</p>
-          <p class="info">2D Rythm Game for the arcade cabin, use abilities to defeat your opponent!</p>
+          <p class="info">Dive into the world of rhythm with this 2D arcade game! Unleash your abilities to defeat opponents and conquer the arcade cabin!</p>
           <!-- Button links -->
           <div class="button"><a target="_blank" href="https://xavieplayz.itch.io/discojam">PLAY</a></div>
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/DiscoJam">CODE</a></div>
@@ -196,7 +261,7 @@
           <!-- Title & Info -->
           <h3 class="title">X-Tension</h3>
           <p class="year">2021</p>
-          <p class="info">3D First-Person Horror Game with randomized maps, beat the timer to win!</p>
+          <p class="info">Embark on a spine-chilling 3D first-person horror experience with randomly made maps. Race against the timer to emerge victorious!</p>
           <!-- Button links -->
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/X-Tension">CODE</a></div>
         </div>
@@ -211,9 +276,7 @@
           <!-- Title & Info -->
           <h3 class="title">Pong</h3>
           <p class="year">2020</p>
-          <p class="info">2D Arcade Game <br>
-            Includes a singleplayer mode & multiplayer mode!
-          </p>
+          <p class="info">Experience the game in both singleplayer and multiplayer modes for endless entertainment!</p>
           <!-- Button links -->
           <div class="button"><a target="_blank" href="Games/Pong/Pong.html">PLAY</a></div>
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/Pong">CODE</a></div>
