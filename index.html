@@ -40,7 +40,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
     integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"crossorigin="anonymous"></script>
 
-<body style="background-color: #3c6e71;">
+<body style="background-color: #e0e0e0;">
   <div class="wrapper">
     <!-- Sidebar  -->
     <nav id="sidebar">
@@ -49,23 +49,17 @@
         <strong>XW</strong>
       </div>
       <ul class="list-unstyled components">
-        <li class="active">
-          <a class="sidebarButton" href="index.html">
-            <i class="fas fa-home"></i>
-            Home
-          </a>
-        </li>
         <li>
           <a class="sidebarButton" href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
             <i class="fas fa-briefcase"></i>
-            Work
+            Extra Projects
           </a>
           <ul class="collapse list-unstyled" id="pageSubmenu">
             <li>
               <a class="sidebarButton" target="_blank" href="https://www.youtube.com/c/XaviePlayz"> <i class="fa-brands fa-youtube"></i>XaviePlayz</a>
             </li>
             <li>
-              <a class="sidebarButton" target="_blank" href="documents/Nightmoor.pdf"> <i class="fa-solid fa-book"></i>Nightmoor</a>
+              <a class="sidebarButton" target="_blank" href="documents/Nightmoor (As Darkness Falls) [BOOK ONE].pdf"> <i class="fa-solid fa-book"></i>Nightmoor</a>
             </li>
           </ul>
         </li>
@@ -99,7 +93,7 @@
 
     <!-- Page Content  -->
     <div id="content">
-      <div style="background-color: #3c6e71;">
+      <div style="background-color: #e0e0e0;">
         <div class="container-fluid">
           <button type="button" id="sidebarCollapse" class="btn btn-info">
             <i class="fas fa-align-left"></i>
@@ -113,7 +107,7 @@
             I had millions of players enjoying my games in Fortnite. I loved the feeling, having people play with what I
             made!
             This was a big factor for me why I chose to start with actual game development.</h5>
-          <p id="intro" style="color: rgba(255, 255, 255, 0.315); font-size: small; text-align: center;">
+          <p id="intro" style="font-size: small; text-align: center;">
             Website, thumbnails and videos made by me.<br></p>
           <div id="myBtnContainer" style="padding-bottom: 9px; text-align: center;"></div>
         </div>
@@ -141,7 +135,7 @@
           <div class="button"><a target="_blank" href="Games/Flappy Bird/index.html">PLAY</a></div>
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/FlappyBird">CODE</a></div>
         </div>
-        <div class="container" data-tags="fortnite">
+        <div class="container" data-tags="unity">
           <!----- Monster Quiz ----->
           <!-- Video backdrop -->
           <video class="preview" loop="true" muted>
@@ -157,7 +151,7 @@
           <div class="button"><a target="_blank" href="Games/MonsterQuiz/MonsterQuiz.html">PLAY</a></div>
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/MonsterQuiz">CODE</a></div>
         </div>
-        <div class="line"></div>
+      <div class="line"></div>
         <div class="container" data-tags="unity">
           <!----- Disco Jam ----->
           <!-- Video backdrop -->
@@ -190,7 +184,7 @@
           <div class="button"><a target="_blank" href="Games/2D Platformer/2DPlatformer.html">PLAY</a></div>
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/2DPlatformer">CODE</a></div>
         </div>
-        <div class="line"></div>
+      <div class="line"></div>
         <div class="container" data-tags="unity">
           <!----- X-Tension ----->
           <!-- Video backdrop -->
@@ -300,19 +294,68 @@
     }, 2000);
   };
 
-  function filterProjects(tag) {
-  const containers = document.getElementsByClassName("container");
+function toggleLines() {
+  const projects = document.querySelectorAll('.container');
+  for (let i = 0; i < projects.length; i++) {
+    const currentProject = projects[i];
+    const nextProject = projects[i + 1];
 
-    for (let i = 0; i < containers.length; i++) {
-      const projectTags = containers[i].dataset.tags.split(' ');
-
-      if (tag === 'all' || projectTags.includes(tag)) {
-      containers[i].style.display = 'block';
-      } else {
-      containers[i].style.display = 'none';
-      }
+    // Check if the next project exists and is visible
+    if (nextProject && currentProject.style.display !== 'none' && nextProject.style.display !== 'none') {
+      currentProject.nextElementSibling.classList.remove('hide-line');
+    } else {
+      currentProject.nextElementSibling.classList.add('hide-line');
     }
   }
+}
+
+function filterProjects(tag) {
+  const containers = document.getElementsByClassName("container");
+
+  for (let i = 0; i < containers.length; i++) {
+    const projectTags = containers[i].dataset.tags.split(' ');
+
+    if (tag === 'all' || projectTags.includes(tag)) {
+      containers[i].style.display = 'block';
+    } else {
+      containers[i].style.display = 'none';
+    }
+  }
+
+  toggleLines(); // Call toggleLines after filtering
+}
+
+
+// Handle tag clicks
+function handleTagClick(tag) {
+  handleProjectVisibility(tag);
+}
+
+// Check if a container should have a line after it
+function checkLineVisibility(container) {
+  const nextContainer = container.nextElementSibling;
+  if (nextContainer && !nextContainer.classList.contains('hide')) {
+    container.querySelector('.line').classList.remove('hide-line');
+  } else {
+    container.querySelector('.line').classList.add('hide-line');
+  }
+}
+
+// Function to handle project visibility
+function handleProjectVisibility(tag) {
+  const containers = document.getElementsByClassName('container');
+
+  for (let container of containers) {
+    if (tag === 'all' || container.classList.contains(tag)) {
+      container.classList.remove('hide');
+    } else {
+      container.classList.add('hide');
+    }
+
+    // Check line visibility every time we toggle project visibility
+    checkLineVisibility(container);
+  }
+}
 
   //Cookie Banner
   let popUp = document.getElementById("cookiePopup");
