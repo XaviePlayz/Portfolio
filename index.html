@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html>
-
-  
-
-
     
 <head>
   <title>Portfolio - Xavier Wevers</title>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="keywords"
     content="GameDeveloper, SoftwareDeveloper, XaviePlayz, XavierPlayz, Xavier, Xavier Wevers, XavierWevers">
-  
   </head>
 
   <!-- Bootstrap CSS CDN -->
@@ -124,8 +118,14 @@
           <div id="myBtnContainer" style="padding-bottom: 9px; text-align: center;"></div>
         </div>
       </div>
+      <div id="tagButtons">
+        <button class="tagButton" onclick="filterProjects('all')">All</button>
+        <button class="tagButton" onclick="filterProjects('unity')">Unity Projects</button>
+        <button class="tagButton" onclick="filterProjects('javascript')">JavaScript Projects</button>
+        <button class="tagButton" onclick="filterProjects('fortnite')">Fortnite Projects</button>
+      </div>
       <div class="row">
-        <div class="container">
+        <div class="container" data-tags="javascript">
           <!----- Flappy Bird ----->
           <!-- Video backdrop -->
           <video class="preview" loop="true" muted>
@@ -141,7 +141,7 @@
           <div class="button"><a target="_blank" href="Games/Flappy Bird/index.html">PLAY</a></div>
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/FlappyBird">CODE</a></div>
         </div>
-        <div class="container">
+        <div class="container" data-tags="fortnite">
           <!----- Monster Quiz ----->
           <!-- Video backdrop -->
           <video class="preview" loop="true" muted>
@@ -158,7 +158,7 @@
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/MonsterQuiz">CODE</a></div>
         </div>
         <div class="line"></div>
-        <div class="container">
+        <div class="container" data-tags="unity">
           <!----- Disco Jam ----->
           <!-- Video backdrop -->
           <video class="preview" loop="true" muted>
@@ -174,7 +174,7 @@
           <div class="button"><a target="_blank" href="https://xavieplayz.itch.io/discojam">PLAY</a></div>
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/DiscoJam">CODE</a></div>
         </div>
-        <div class="container">
+        <div class="container" data-tags="unity">
           <!----- 2D Platformer ----->
           <!-- Video backdrop -->
           <video class="preview" loop="true" muted>
@@ -191,7 +191,7 @@
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/2DPlatformer">CODE</a></div>
         </div>
         <div class="line"></div>
-        <div class="container">
+        <div class="container" data-tags="unity">
           <!----- X-Tension ----->
           <!-- Video backdrop -->
           <video class="preview" loop="true" muted>
@@ -206,7 +206,7 @@
           <!-- Button links -->
           <div class="button"><a target="_blank" href="https://github.com/XaviePlayz/X-Tension">CODE</a></div>
         </div>
-        <div class="container">
+        <div class="container" data-tags="unity">
           <!----- Pong ----->
           <!-- Video backdrop -->
           <video class="preview" loop="true" muted>
@@ -288,6 +288,29 @@
         a.getElementsByClassName('button')[1].style.marginLeft = '50%';
         a.getElementsByClassName('button')[0].style.marginLeft = '25%';
         break;
+    }
+  }
+
+  // Clickable Tags
+
+  window.onload = () => {
+    setTimeout(() => {
+      checkCookie();
+      filterProjects('all'); // Show all projects initially
+    }, 2000);
+  };
+
+  function filterProjects(tag) {
+  const containers = document.getElementsByClassName("container");
+
+    for (let i = 0; i < containers.length; i++) {
+      const projectTags = containers[i].dataset.tags.split(' ');
+
+      if (tag === 'all' || projectTags.includes(tag)) {
+      containers[i].style.display = 'block';
+      } else {
+      containers[i].style.display = 'none';
+      }
     }
   }
 

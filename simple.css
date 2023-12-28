@@ -73,6 +73,23 @@ h5 {
   -webkit-text-stroke-color: rgb(255, 255, 255)
 }
 
+/* Button Styles */
+.tagButton {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #007bff; /* Button background color */
+  color: #fff; /* Button text color */
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.tagButton:hover {
+  background-color: #0056b3; /* Hover background color */
+  color: #fff; /* Hover text color */
+}
+
 .info {
   margin-left: 10%;
   margin-right: 10%;
